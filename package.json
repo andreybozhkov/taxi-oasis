@@ -1,0 +1,25 @@
+{
+  "name": "taxi-oasis",
+  "version": "1.0.0",
+  "description": "Website for a taxi company. Main technologies: HTML5, CSS3(SASS). Additional tools: GULP.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreybozhkov/taxi-oasis.git"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "SASS",
+    "GULP"
+  ],
+  "author": "Andrey Bozhkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreybozhkov/taxi-oasis/issues"
+  },
+  "homepage": "https://github.com/andreybozhkov/taxi-oasis#readme"
+}
