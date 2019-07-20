@@ -21,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/andreybozhkov/taxi-oasis/issues"
   },
-  "homepage": "https://github.com/andreybozhkov/taxi-oasis#readme",
-  "devDependencies": {
-    "gulp": "4.0.2"
-  }
+  "homepage": "https://github.com/andreybozhkov/taxi-oasis#readme"
 }
