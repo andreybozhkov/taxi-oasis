@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/andreybozhkov/taxi-oasis#readme",
   "devDependencies": {
-    "gulp": "4.0.2"
+    "gulp": "4.0.2",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-newer": "^1.4.0"
   }
 }

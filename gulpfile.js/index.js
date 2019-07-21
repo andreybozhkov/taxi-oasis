@@ -1,9 +1,6 @@
 const gulp = require('gulp');
-const devBuild = (process.env.NODE_ENV !== 'production');
-const src = '../src/';
-const build = '../build/';
+const html = require('./html').default;
 
-exports.default = (cb) => {
-    console.log('Gulp works!');
-    cb();
-}
+exports.build = gulp.series(
+    html
+);
