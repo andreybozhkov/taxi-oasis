@@ -5,7 +5,6 @@ const src = 'src/';
 const build = 'build/';
 
 function html () {
-    console.log('HTML task started!');
     const out = build + 'html/';
 
     return gulp.src(src + 'html/**/*.html')

@@ -23,8 +23,14 @@
   },
   "homepage": "https://github.com/andreybozhkov/taxi-oasis#readme",
   "devDependencies": {
+    "cssnano": "4.1.10",
+    "del": "5.0.0",
     "gulp": "4.0.2",
-    "gulp-htmlclean": "^2.7.22",
-    "gulp-newer": "^1.4.0"
+    "gulp-htmlclean": "2.7.22",
+    "gulp-newer": "1.4.0",
+    "gulp-postcss": "8.0.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "2.6.5",
+    "node-sass": "4.12.0"
   }
 }
