@@ -16,7 +16,7 @@ function css () {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([cssnano()]))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(out));
+        .pipe(gulp.dest(out))
 }
 
 exports.default = css;

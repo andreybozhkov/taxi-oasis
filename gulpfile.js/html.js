@@ -1,16 +1,22 @@
 const gulp = require('gulp');
-const newer = require('gulp-newer');
 const htmlclean = require('gulp-htmlclean');
 const src = 'src/';
 const build = 'build/';
 
-function html () {
-    const out = build + 'html/';
+function htmlIndex () {
+    const out = build;
 
-    return gulp.src(src + 'html/**/*.html')
-        .pipe(newer(out))
+    return gulp.src(src + '*.html')
         .pipe(htmlclean())
         .pipe(gulp.dest(out));
 }
 
-exports.default = html;
+function htmlRest () {
+    const out = build + 'html/';
+
+    return gulp.src(src + 'html/**/*.html')
+        .pipe(htmlclean())
+        .pipe(gulp.dest(out));
+}
+
+exports.default = gulp.series(htmlIndex, htmlRest);

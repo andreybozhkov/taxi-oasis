@@ -1,14 +1,17 @@
 const gulp = require('gulp');
 const html = require('./html').default;
 const css = require('./css').default;
+const bSync = require('./browser-sync');
 const src = 'src/';
-const build = 'build/';
 
 function watch(cb) {
-    gulp.watch(src + 'html/**/*.html', html);
-    gulp.watch(src + 'scss/**/*.scss', css);
+    gulp.watch([src + '*.html', src + 'html/**/*.html'], gulp.series(html, bSync.reloader));
+    gulp.watch(src + 'scss/**/*.scss', gulp.series(css, bSync.reloader));
 
     cb();
 }
 
-exports.default = watch;
+exports.default = gulp.series(
+    bSync.default,
+    watch
+);
