@@ -1,6 +1,11 @@
 @import url('https://use.fontawesome.com/releases/v5.10.1/js/all.js');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 // global styles
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -20,40 +25,24 @@ a {
     text-decoration: none;
 }
 
-.container {
+.container-grid {
     display: grid;
-}
-
-// header
-header {
-    nav {
-        ul {
-            li {
-                display: inline;
-                a {
-                    
-                }
-            }
-        }
-    }
 }
 
 img {
     width: 100%;
 }
 
+// header
 .header {
     background-color: #ffdc00;
-    box-sizing: border-box;
-    
-
     height: 100px;
     
     position: sticky;
     position: -webkit-sticky;
     top: 0;
 
-    grid-template-columns: [taxi-logo] 15% [heading] 20% [nav-menu] auto;
+    grid-template-columns: [taxi-logo] 10% [heading] 20% [nav-menu] auto;
     grid-template-rows: [header-start] 100px [header-end];
 }
 
@@ -63,7 +52,7 @@ img {
     align-self: center;
     justify-self: center;
 
-    font-size: 5em;
+    font-size: 4em;
 }
 
 .header-heading {
@@ -79,4 +68,23 @@ img {
     grid-row: header-start / span 1;
     align-self: center;
     justify-self: right;
+    width: 100%;
+}
+
+.nav-menu-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    li {
+        flex: 1 1 auto;
+        box-sizing: border-box;
+        a {
+            box-sizing: inherit;
+            display: block;
+            font-size: 1.5em;
+            text-align: center;
+        }
+    }
 }
