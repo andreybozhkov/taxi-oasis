@@ -1,0 +1,54 @@
+@import 'header-nav-menu';
+$primary-color: #ffdc00;
+
+.header {
+    background-color: $primary-color;
+    height: 100px;
+    
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+
+    grid-template-columns: [taxi-logo] 10% [phone-icon] 10% [heading] 15% [nav-menu] auto [end];
+    grid-template-rows: [header-start] 100px [header-end];
+}
+
+.header {
+    $grid-row-placement: header-start / span 1;
+    $vertical-grid-align: center;
+
+    %header-item {
+        grid-row: $grid-row-placement;
+        align-self: $vertical-grid-align;
+    }
+
+    %icon-shared {
+        @extend %header-item;
+        justify-self: center;
+        font-size: 4em;
+    }
+
+    &-taxi-logo {
+        @extend %icon-shared;
+        grid-column: taxi-logo / span 1;
+    }
+
+    &-phone {
+        @extend %icon-shared;
+        grid-column: phone-icon / span 1;
+    }
+
+    &-page-heading {
+        @extend %header-item;
+        grid-column: heading / span 1;
+        justify-self: left;
+        font-size: 2em;
+    }
+
+    &-nav-menu {
+        @extend %header-item;
+        grid-column: nav-menu / span 1;
+        justify-self: right;
+        width: 100%;
+    }
+}
