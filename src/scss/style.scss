@@ -1,32 +1,51 @@
 @import url('https://use.fontawesome.com/releases/v5.10.1/js/all.js');
 
+// global styles
 body {
     margin: 0;
     padding: 0;
 }
 
+main, footer {
+    padding: 10px 20px 10px 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+}
+
+// header
 header {
     nav {
         ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-
             li {
-                float: right;
+                display: inline;
                 a {
-                    text-decoration: none;
-                    display: block;
+                    
                 }
             }
         }
     }
 }
 
+img {
+    width: 100%;
+}
+
 .header {
     background-color: #ffdc00;
     box-sizing: border-box;
-    padding: 10px 20px 10px 20px;
+    
 
     height: 100px;
     
@@ -34,18 +53,30 @@ header {
     position: -webkit-sticky;
     top: 0;
 
-    i {
-        position: absolute;
-        left: 15px;
-    }
-
-    h1 {
-        position: absolute;
-        left: 20px;
-        top: 0px;
-    }
+    grid-template-columns: [taxi-logo] 15% [heading] 20% [nav-menu] auto;
+    grid-template-rows: [header-start] 100px [header-end];
 }
 
-.container {
-    display: grid;
+.header-taxi-logo {
+    grid-column: taxi-logo / span 1;
+    grid-row: header-start / span 1;
+    align-self: center;
+    justify-self: center;
+
+    font-size: 5em;
+}
+
+.header-heading {
+    grid-column: heading / span 1;
+    grid-row: header-start / span 1;
+    align-self: center;
+    justify-self: left;
+    font-size: 2.5em;
+}
+
+.nav-menu {
+    grid-column: nav-menu / span 1;
+    grid-row: header-start / span 1;
+    align-self: center;
+    justify-self: right;
 }
