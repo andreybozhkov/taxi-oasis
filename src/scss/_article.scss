@@ -1,0 +1,24 @@
+$border-color: #f18701;
+
+.article {
+    box-sizing: border-box;
+    border: 5px solid $border-color;
+    border-radius: 10px;
+    padding: 10px;
+
+    figcaption {
+        font-size: 0.6rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    img {
+        width: 100%;
+    }
+}
