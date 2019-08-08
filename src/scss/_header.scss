@@ -36,10 +36,10 @@ $primary-color: #ffdc00;
     &-phone {
         @extend %icon-shared;
         grid-column: phone-icon / span 1;
-        transition: transform 100ms linear;
+        animation: ring 500ms linear 0s normal infinite backwards paused;
 
         &:hover {
-            transform: rotate(-45deg);
+            animation-play-state: running;
         }
     }
 
@@ -67,5 +67,14 @@ $primary-color: #ffdc00;
     }
     50% {
         transform: translate(640px, 22px);
+    }
+}
+
+@keyframes ring {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-90deg);
     }
 }
