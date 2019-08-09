@@ -35,6 +35,8 @@ $border-color: #f18701;
     padding-bottom: 10px;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     
     p {
         font-size: 1em;
@@ -54,6 +56,8 @@ $border-color: #f18701;
         $alpha: 0.6;
         $size: 1.5em;
         @include heading($alpha, $size);
+        align-self: stretch;
+        text-align: center;
 
         &-subsection {
             $alpha: 0.4;
