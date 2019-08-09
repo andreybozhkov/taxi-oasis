@@ -1,9 +1,15 @@
-@mixin background-color-alpha($alpha) {
-    background: rgba(255, 220, 0, $alpha);
+$border-color: #f18701;
+
+@mixin background-color-alpha($alpha, $type) {
+    @if $type == heading {
+        background: rgba(255, 220, 0, $alpha);
+    } @else {
+        background: rgba(255, 255, 255, $alpha);
+    }
 }
 
 @mixin heading($alpha, $size) {
-    @include background-color-alpha($alpha);
+    @include background-color-alpha($alpha, heading);
     padding: 10px 20px 10px 20px;
     margin-top: 0px;
     margin-bottom: 10px;
@@ -11,10 +17,38 @@
     color: black;
 }
 
+@mixin about-content($screensize) {
+    @if $screensize == small {
+        p {
+            grid-column: 1 / span 2;
+            grid-row: 3 / span 1;
+        }
+    } @else {
+        p {
+            grid-column: 3 / span 1;
+            grid-row: 1 / span 2;
+        }
+    }
+}
+
 .about {
     padding-bottom: 10px;
     display: flex;
     flex-flow: column nowrap;
+    
+    p {
+        font-size: 1em;
+    }
+
+    section {
+        $alpha: 0.8;
+        @include background-color-alpha($alpha, section);
+
+        border: 5px solid $border-color;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+    }
 
     &-heading {
         $alpha: 0.6;
@@ -30,6 +64,37 @@
 
     &-subsection-fleet-container {
         display: grid;
+        grid-gap: 1rem;
+
+        @media screen and (max-width: 1024px) {
+            @include about-content(small);
+            grid-template-columns: repeat(2, minmax(320px, 1fr));
+            grid-template-rows: repeat(2, minmax(200px, 300px)) auto;
+            grid-auto-flow: column;
+
+            img {
+                box-sizing: border-box;
+                max-width: 90%;
+                max-height: 290px;
+                justify-self: center;
+                align-self: center;
+                box-shadow: 0 0 5px 5px black;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            @include about-content(large);
+            grid-template-columns: 1fr 1fr minmax(200px, 320px);
+            grid-template-rows: 1fr 1fr;
+
+            img {
+                box-sizing: border-box;
+                max-width: 90%;
+                max-height: 280px;
+                justify-self: center;
+                align-self: center;
+                box-shadow: 0 0 5px 5px black;
+            }
+        }
     }
 
     &-subsection-base-container {
