@@ -12,6 +12,7 @@ $border-color: #f18701;
     border: 5px solid $border-color;
     border-radius: 10px;
     padding: 10px;
+    transition: all 1s;
 
     figure {
         margin: 0;
@@ -40,5 +41,9 @@ $border-color: #f18701;
         & > p {
             font-size: 0.6rem;
         }
+    }
+
+    &:hover {
+        transform: scale(1.1);
     }
 }
