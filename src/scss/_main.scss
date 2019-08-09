@@ -32,7 +32,7 @@ main {
 
     &-main-heading {
         &-summer {
-            $alpha: 0.5;
+            $alpha: 0.6;
             @include background-color-alpha($alpha, summer);
         }
         &-offseason {
