@@ -7,7 +7,6 @@ $border-color: #f18701;
 .article {
     $alpha: 0.7;
     @include background-color-alpha($alpha);
-
     box-sizing: border-box;
     border: 5px solid $border-color;
     border-radius: 10px;
