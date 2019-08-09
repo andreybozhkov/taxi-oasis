@@ -1,6 +1,7 @@
 $primary-color: #ffdc00;
 
 .header {
+    grid-row: header / span 1;
     display: grid;
     background-color: $primary-color;
     height: 100px;
