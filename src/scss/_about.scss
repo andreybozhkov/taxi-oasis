@@ -2,16 +2,37 @@
     background: rgba(255, 220, 0, $alpha);
 }
 
+@mixin heading($alpha, $size) {
+    @include background-color-alpha($alpha);
+    padding: 10px 20px 10px 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: $size;
+    color: black;
+}
+
 .about {
     padding-bottom: 10px;
+    display: flex;
+    flex-flow: column nowrap;
 
     &-heading {
         $alpha: 0.6;
-        @include background-color-alpha($alpha);
-        padding: 10px 20px 10px 20px;
-        margin-top: 0px;
-        margin-bottom: 10px;
-        font-size: 1.5em;
-        color: black;
+        $size: 1.5em;
+        @include heading($alpha, $size);
+
+        &-subsection {
+            $alpha: 0.4;
+            $size: 1em;
+            @include heading($alpha, $size);
+        }
+    }
+
+    &-subsection-fleet-container {
+        display: grid;
+    }
+
+    &-subsection-base-container {
+        display: grid;
     }
 }
