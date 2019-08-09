@@ -4,7 +4,7 @@
 @import 'header';
 @import 'header-nav-menu';
 
-@import 'articles';
+@import 'main';
 @import 'article';
 
 $font-stack: 'Nunito', sans-serif;
@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
 
-    & > main, & > footer {
+    & > footer {
         padding: 10px 20px 10px 20px;
     }
 }
