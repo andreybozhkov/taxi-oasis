@@ -19,10 +19,6 @@
     }
 }
 
-main {
-    grid-row: main / span 1;
-}
-
 .articles {
     padding-bottom: 10px;
 
@@ -44,9 +40,5 @@ main {
         box-sizing: border-box;
         padding-left: 20px;
         padding-right: 20px;
-
-        &-summer {
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        }
     }
 }
