@@ -1,0 +1,41 @@
+@mixin background-color-alpha($alpha) {
+    background: rgba(255, 255, 255, $alpha);
+}
+
+@mixin background-image($path) {
+    background: rgb(255, 220, 0) url($path) no-repeat center center fixed;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        @include background-image('../images/background/portrait.jpg');
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+    main {
+        @include background-image('../images/background/landscape.jpg');
+    }
+}
+
+.intro {
+    $alpha-intro: 0.7;
+    @include background-color-alpha($alpha-intro);
+    
+    padding: 10px 20px 10px 20px;
+
+    h2 {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: black;
+    }
+    p {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-size: 1em;
+        color: black;
+    }
+}
