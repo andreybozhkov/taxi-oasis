@@ -2,25 +2,8 @@
     background: rgba(255, 255, 255, $alpha);
 }
 
-@mixin background-image($path) {
-    background: rgb(255, 220, 0) url($path) no-repeat center center fixed;
-    background-size: cover;
-}
-
-@media screen and (max-width: 1024px) {
-    main {
-        @include background-image('../images/background/portrait.jpg');
-    }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1600px) {
-    main {
-        @include background-image('../images/background/landscape.jpg');
-    }
-}
-
 .intro {
-    $alpha-intro: 0.7;
+    $alpha-intro: 0.8;
     @include background-color-alpha($alpha-intro);
     
     padding: 10px 20px 10px 20px;

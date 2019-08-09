@@ -1,3 +1,20 @@
+@mixin background-image($path) {
+    background: rgb(255, 220, 0) url($path) no-repeat center center fixed;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        @include background-image('../images/background/portrait.jpg');
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        @include background-image('../images/background/landscape.jpg');
+    }
+}
+
 .articles {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 1em;

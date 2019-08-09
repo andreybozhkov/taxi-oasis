@@ -18,10 +18,6 @@ $font-stack: 'Nunito', sans-serif;
 body {
     margin: 0;
     padding: 0;
-
-    & > footer {
-        padding: 10px 20px 10px 20px;
-    }
 }
 
 ul {
@@ -36,4 +32,18 @@ a {
 
 .container-grid {
     display: grid;
+
+    &-page {
+        & > footer {
+            box-sizing: border-box;
+            padding: 10px 20px 10px 20px;
+            
+            p {
+                margin: 0;
+                font-size: 0.8em;
+            }
+        }
+
+        grid-template-rows: [header] 100px [main] auto [footer] 100px;
+    }
 }
