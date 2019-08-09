@@ -3,8 +3,12 @@
     background-size: cover;
 }
 
-@mixin background-color-alpha($alpha) {
-    background: rgba(255, 220, 0, $alpha);
+@mixin background-color-alpha($alpha, $season) {
+    @if $season == summer {
+        background: rgba(255, 220, 0, $alpha);
+    } @else {
+        background: rgba(160, 230, 255, $alpha);
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -27,8 +31,14 @@ main {
     padding-bottom: 10px;
 
     &-main-heading {
-        $alpha: 0.5;
-        @include background-color-alpha($alpha);
+        &-summer {
+            $alpha: 0.5;
+            @include background-color-alpha($alpha, summer);
+        }
+        &-offseason {
+            $alpha: 1;
+            @include background-color-alpha($alpha, winter);
+        }
 
         padding: 10px 20px 10px 20px;
         margin-top: 0px;
@@ -45,7 +55,7 @@ main {
         padding-left: 20px;
         padding-right: 20px;
 
-        &-summer {
+        &-collection {
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         }
     }

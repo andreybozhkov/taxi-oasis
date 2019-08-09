@@ -1,6 +1,7 @@
 $button-background-color: #cbbaed;
 $button-text-color: black;
-$border-color: #f18701;
+$border-color-summer: #f18701;
+$border-color-offseason: #A0E6FF;
 
 @mixin nav-button {
     a {
@@ -10,7 +11,10 @@ $border-color: #f18701;
         font-size: 1.5em;
         background-color: $button-background-color;
         color: $button-text-color;
-        border: 2px solid $border-color;
+        border: 2px solid $border-color-summer;
+        &.offseason {
+            border: 2px solid $border-color-offseason;
+        }
         border-radius: 10px;
 
         &:link {
