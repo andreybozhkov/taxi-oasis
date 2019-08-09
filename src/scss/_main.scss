@@ -3,6 +3,10 @@
     background-size: cover;
 }
 
+@mixin background-color-alpha($alpha) {
+    background: rgba(255, 220, 0, $alpha);
+}
+
 @media screen and (max-width: 1024px) {
     main {
         @include background-image('../images/background/portrait.jpg');
@@ -16,6 +20,19 @@
 }
 
 .articles {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    grid-gap: 1em;
+    &-main-heading {
+        $alpha: 0.5;
+        @include background-color-alpha($alpha);
+
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: black;
+    }
+
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 1em;
+    }
 }
