@@ -1,0 +1,17 @@
+@mixin background-color-alpha($alpha) {
+    background: rgba(255, 220, 0, $alpha);
+}
+
+.about {
+    padding-bottom: 10px;
+
+    &-heading {
+        $alpha: 0.6;
+        @include background-color-alpha($alpha);
+        padding: 10px 20px 10px 20px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        color: black;
+    }
+}
