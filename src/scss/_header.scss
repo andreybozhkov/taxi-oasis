@@ -41,8 +41,21 @@ $primary-color: #ffdc00;
         grid-column: phone-icon / span 1;
         animation: ring 500ms linear 0s normal infinite backwards paused;
 
+        &:link {
+            color: black;
+        }
+
+        &:visited {
+            color: black;
+        }
+
         &:hover {
             animation-play-state: running;
+            color: black;
+        }
+
+        &:active {
+            color: black;
         }
     }
 

@@ -1,0 +1,89 @@
+$border-color: #f18701;
+
+@mixin background-color-alpha($alpha, $type) {
+    @if $type == heading {
+        background: rgba(255, 220, 0, $alpha);
+    } @else {
+        background: rgba(255, 255, 255, $alpha);
+    }
+}
+
+@mixin heading($alpha, $size) {
+    @include background-color-alpha($alpha, heading);
+    padding: 10px 20px 10px 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: $size;
+    color: black;
+}
+
+@mixin linkreset() {
+    a:link {
+        color: black;
+    }
+
+    a:visited {
+        color: black;
+    }
+
+    a:hover {
+        color: black;
+    }
+
+    a:active {
+        color: black;
+    }
+}
+
+.contacts {
+    p {
+        font-size: 1em;
+    }
+
+    &-heading {
+        $alpha: 0.6;
+        $size: 1.5em;
+        @include heading($alpha, $size);
+        text-align: center;
+    }
+
+    &-container {
+        @include linkreset();
+        
+        $alpha: 0.8;
+        @include background-color-alpha($alpha, section);
+
+        max-width: 30rem;
+        border: 5px solid $border-color;
+        border-radius: 10px;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+
+        & > a {
+            font-size: 5rem;
+            align-self: center;
+            justify-self: center;
+            transition: all 0.5s linear;
+
+            &:hover {
+                transform: rotate(1turn);
+            }
+        }
+
+        address {
+            grid-area: address;
+        }
+
+        display: grid;
+        grid-gap: 1rem;
+        grid-template:
+            'icon icon' minmax(1rem, 10rem)
+            'icon icon' minmax(1rem, 10rem)
+            'address address' minmax(1rem, 1fr)
+            / minmax(1rem, 10rem) minmax(1rem, 10rem);
+        justify-content: center;
+        align-content: center;
+    }
+}
