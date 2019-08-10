@@ -4,26 +4,33 @@
 
 Hosted at: https://andreybozhkov.github.io/taxi-oasis
 
-**Purpose** of the website: *present the company online in simple and attractive way, which allows users to quickly call and order a taxi*.
+**Purpose** of the website: *Present ideas about summer / off-season at the Bulgarian Black Sea Cost which will inspire users and prompt them to call in order to order a taxi. Brief presentation of the company.*
 
 Main **technologies** used:
-- HTML5
-- CSS3
+- HTML5 (semantic tags)
+- CSS3 (heavy on CSS Grids)
     - SASS
 Additional tools:
-- Gulp
+- Development:
+    - Gulp (tasks and watch for HTML, CSS and BrowserSync)
+- Deployment:
+    - GitHub Pages
+- Process:
+    1. Use development branch for writing the code.
+        - Use gulp to run tasks to compile into build folder.
+    2. Copy build folder contents into master branch.
 
 Site **structure**:
 - Home
     - Quick intro
     - List of articles
-        - Topic: ideas and places for the summer
-        - Link in each article to order taxi from / to that destination
+        - Ideas for the summer
+- Summer
+    - Collection of all articles with ideas for the summer
+- Off-Season
+    - Collection of all articles with ideas for the off-season
 - About
-    - Description:
-        - Vehicles
-        - History
-        - Mission
-- Order a taxi
+    - Fleet
+    - Location
+- Contacts
     - Mobile / Viber contacts
-    - Form
