@@ -35,7 +35,7 @@ a {
 
 .container-page {
     display: grid;
-    grid-template-rows: [header] 100px [main] auto [footer] 10%;
+    grid-template-rows: [header] 100px [main] auto [footer] 1fr;
     
     & > footer {
         box-sizing: border-box;
