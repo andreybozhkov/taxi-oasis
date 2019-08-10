@@ -5,6 +5,7 @@ $primary-color: #ffdc00;
     display: grid;
     background-color: $primary-color;
     height: 100px;
+    z-index: 99;
     
     position: sticky;
     position: -webkit-sticky;

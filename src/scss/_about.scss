@@ -31,6 +31,10 @@ $border-color: #f18701;
     }
 }
 
+@mixin animation($delay) {
+    animation: appear 2s ease-out $delay normal 1 forwards running;
+}
+
 .about {
     padding-bottom: 10px;
     display: flex;
@@ -38,8 +42,17 @@ $border-color: #f18701;
     justify-content: center;
     align-items: center;
     
-    p {
-        font-size: 1em;
+    img {
+        transform: scale(0);
+    }
+
+    @keyframes appear {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 
     section {
@@ -50,6 +63,10 @@ $border-color: #f18701;
         border-radius: 10px;
         padding: 10px;
         margin: 10px;
+    }
+
+    p {
+        font-size: 1em;
     }
 
     &-heading {
@@ -99,6 +116,22 @@ $border-color: #f18701;
                 box-shadow: 0 0 5px 5px black;
             }
         }
+
+        img:nth-child(1) {
+            @include animation(0s);
+        }
+    
+        img:nth-child(2) {
+            @include animation(0.5s);
+        }
+    
+        img:nth-child(3) {
+            @include animation(1s);
+        }
+    
+        img:nth-child(4) {
+            @include animation(1.5s);
+        }
     }
 
     &-subsection-base-container {
@@ -135,6 +168,10 @@ $border-color: #f18701;
                 align-self: center;
                 box-shadow: 0 0 5px 5px black;
             }
+        }
+
+        img {
+            @include animation(2s);
         }
     }
 }
